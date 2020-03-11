@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exercise 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercise2Style.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <ul class="tabs">
+        </ul>
+
+        <div class="tab-folder">
+        </div>
+    </div>
+    
+
+    
+    
+<script type="text/javascript">
+    
+
+		
+fetch('https://api.myjson.com/bins/st4v2')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    appendData(data);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+
+
+  function appendData(data) {
+  	  let tabs = document.querySelector(".tabs");
+  	    for (let i = 0; i < data.length; i++) {
+  	    	let li = document.createElement("li");
+            li.innerHTML += "<a href=" + "\"" + "#" + "section" + [i] + "\"" + "/>" + data[i].title;
+  	    	li.classList.add("tab");
+  	    	tabs.appendChild(li);
+  	    	let div = document.querySelector(".tab-folder");
+  	    	div.innerHTML += "<div id=" + "\"" + "section" + [i] + "\"" + "class=" + "\"" + "tab-content" + "\"" +">" + data[i].content + "</div>";
+  	    }
+  }
+    
+    
+    
+
+</script>
+</body>
+</html>

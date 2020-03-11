@@ -1,0 +1,78 @@
+
+		* {
+			padding: 0;
+			margin: 0;
+		}
+        
+        
+.tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content {
+    display: none;
+}
+.tab-folder > :last-child, .tab-folder > .tab-content:target {
+    display: block;
+}
+
+
+		.tabs {
+			display: flex;
+			justify-content: space-around;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			border-bottom: 1px solid black;
+		}
+
+		.tab {
+			cursor: pointer;
+			padding: 10px;
+
+		}
+
+		.tab:hover {
+			background-color: #AAA;
+		}
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .tab-folder {
+            padding: 20px;
+        }
+
+
+/*accordion*/
+
+
+
+@media only screen and (max-width: 600px) {
+
+        .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+}
+    
+}
+
+
